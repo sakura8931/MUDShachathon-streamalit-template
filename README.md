@@ -1,0 +1,142 @@
+# 🚀 Hackathon Streamlit Template
+
+ハッカソン初参加者向けの Streamlit テンプレートです。
+Fork → Clone するだけですぐに開発を始められます！
+
+---
+
+## 📁 ファイル構成
+
+```
+hackathon-streamlit-template/
+│
+├── .streamlit/
+│   ├── config.toml           # テーマ・サーバーの設定ファイル
+│   └── secrets.toml.example  # シークレット（APIキーなど）の記述例
+│
+├── pages/
+│   ├── 1_📊_graph.py         # グラフのサンプルページ
+│   ├── 2_📝_form.py          # 入力フォームのサンプルページ
+│   ├── 3_🗄️_database.py     # データベースのサンプルページ
+│   ├── 4_🌐_api.py           # 外部API連携のサンプルページ
+│   ├── 5_🔐_auth.py          # ログイン機能のサンプルページ
+│   └── 6_📁_upload.py        # ファイルアップロードのサンプルページ
+│
+├── utils/
+│   ├── database.py           # DB接続・操作の関数
+│   └── auth.py               # 認証関連の関数
+│
+├── data/                     # SQLiteのDBファイル置き場
+├── uploads/                  # アップロードファイル置き場
+├── app.py                    # アプリのトップページ
+├── .gitignore                # Git に含めないファイルの一覧
+├── pyproject.toml            # プロジェクト・依存パッケージの設定
+└── README.md                 # このファイル
+```
+
+---
+
+## 🍴 Step 1 : Fork する
+
+> **Fork とは？** GitHub 上にある他の人のリポジトリを、自分のアカウントにコピーする機能です。
+
+1. このページ右上の **「Fork」** ボタンをクリック
+2. **「Create fork」** をクリック
+3. 自分のアカウントにリポジトリがコピーされます
+
+---
+
+## 💻 Step 2 : Clone する
+
+> **Clone とは？** GitHub 上のリポジトリを自分のパソコンにダウンロードする操作です。
+
+1. Fork したリポジトリのページを開く
+2. 緑色の **「Code」** ボタンをクリック
+3. 表示された URL をコピー
+4. ターミナルで以下を実行：
+
+```bash
+git clone コピーしたURL
+cd hackathon-streamlit-template
+```
+
+---
+
+## 🐍 Step 3 : 仮想環境を作成する
+
+> **仮想環境とは？** プロジェクトごとに独立した Python の環境を作る仕組みです。
+> 他のプロジェクトと依存パッケージが混ざらないようにするために使います。
+
+```bash
+uv venv
+```
+
+実行すると `.venv/` フォルダが作成されます。
+
+---
+
+## ✅ Step 4 : 仮想環境に入る
+
+**Mac / Linux の場合：**
+```bash
+source .venv/bin/activate
+```
+
+**Windows の場合：**
+```bash
+.venv\Scripts\activate
+```
+
+成功すると、ターミナルの先頭に `(.venv)` と表示されます。
+
+> ⚠️ **作業するたびに毎回実行** する必要があります！
+
+---
+
+## 📦 Step 5 : 依存パッケージをインストールする
+
+```bash
+uv sync
+```
+
+`pyproject.toml` に書かれたパッケージが自動でインストールされます。
+
+---
+
+## ▶️ Step 6 : アプリを起動する
+
+```bash
+streamlit run app.py
+```
+
+ブラウザで `http://localhost:8501` が自動で開きます 🎉
+
+---
+
+## 🔑 APIキーなどの秘密情報を使いたい場合
+
+`.streamlit/secrets.toml.example` をコピーして `secrets.toml` にリネームし、値を記入してください。
+
+```bash
+cp .streamlit/secrets.toml.example .streamlit/secrets.toml
+```
+
+> ⚠️ `secrets.toml` は `.gitignore` に含まれているため、**Git には絶対にアップロードされません。**
+
+---
+
+## 🚫 .gitignore について
+
+`.gitignore` には **Git で管理しないファイル** を記述しています。
+
+| 記述内容 | 理由 |
+|---|---|
+| `.venv/` | 仮想環境は人それぞれ異なるため共有不要 |
+| `__pycache__/` | Python が自動生成するキャッシュファイル |
+| `.streamlit/secrets.toml` | APIキーなどの秘密情報を守るため |
+| `.env` | 環境変数ファイル（秘密情報を含む場合がある） |
+| `uploads/*` | アップロードファイルは共有不要 |
+| `data/*.db` | DBファイルは各自で生成されるため共有不要 |
+| `.DS_Store` | Mac が自動生成するファイル（不要） |
+
+> 💡 **重要：** 秘密情報は最初から絶対に `git add` しないように注意しましょう！
