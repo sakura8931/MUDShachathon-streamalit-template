@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oshi Calendar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="background-stars"></div>
+
+<div class="phone">
+    <div class="garland">
+        <div class="chain-line"></div>
+        <div class="hanging-decor">
+            <span>💛</span><span>⭐</span><span>🌸</span><span>⭐</span><span>💛</span>
+        </div>
+    </div>
+
+    <header>
+        <div class="calendar-nav">
+            <button id="prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <div>
+                <h1 id="month-eng">April 2026</h1>
+                <h2 id="month-jp">2026年 4月</h2>
+            </div>
+            <button id="next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </header>
+
+    <main class="calendar-card">
+        <div class="week">
+            <div class="sun">Sun</div>
+            <div class="mon">Mon</div>
+            <div class="tue">Tue</div>
+            <div class="wed">Wed</div>
+            <div class="thu">Thu</div>
+            <div class="fri">Fri</div>
+            <div class="sat">Sat</div>
+        </div>
+
+        <div id="calendar"></div>
+    </main>
+
+    <div class="book-illustration">📘✒️</div>
+
+    <nav>
+        <button class="active">
+            <i class="fa-regular fa-calendar"></i>
+            <span>Month</span>
+        </button>
+        <button>
+            <i class="fa-solid fa-list"></i>
+            <span>List</span>
+        </button>
+        <button class="plus">
+            <i class="fa-solid fa-circle-plus"></i>
+            <span>New Event</span>
+        </button>
+        <button>
+            <i class="fa-regular fa-user"></i>
+            <span>Profile</span>
+        </button>
+        <button>
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+        </button>
+    </nav>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
